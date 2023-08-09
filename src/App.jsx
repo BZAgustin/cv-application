@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ContactInfo from './components/ContactInfo';
 import Preview from './components/Preview';
+import uniqid from 'uniqid';
 import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   });
 
   const [education, setEducation] = useState([{
+    id: uniqid(),
     institution: '',
     degree: '',
     from: '',
@@ -19,6 +21,7 @@ function App() {
   }]);
 
   const [workExperience, setWorkExperience] = useState([{
+    id: uniqid(),
     company: '',
     position: '',
     from: '',
@@ -48,7 +51,7 @@ function App() {
       </header>
       <main>
         <div className="wrapper">
-          <div className="editor-container">
+
             <ContactInfo 
               {...contactInfo}
               changeFirstName={firstNameChangeHandler}
@@ -56,14 +59,12 @@ function App() {
               changeAddress={addressChangeHandler}
               changePhone={phoneChangeHandler}
             />
-          </div>
-          <div className="preview-container">
+
             <Preview 
               contact={contactInfo}
               education={education}
               workExp={workExperience}
             />
-          </div>
         </div>
       </main>
     </>
