@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import ContactInfo from './components/ContactInfo';
+import Preview from './components/Preview';
 import './App.css'
 
 function App() {
@@ -47,10 +49,20 @@ function App() {
       <main>
         <div className="wrapper">
           <div className="editor-container">
-
+            <ContactInfo 
+              {...contactInfo}
+              changeFirstName={firstNameChangeHandler}
+              changeLastName={lastNameChangeHandler}
+              changeAddress={addressChangeHandler}
+              changePhone={phoneChangeHandler}
+            />
           </div>
           <div className="preview-container">
-
+            <Preview 
+              contact={contactInfo}
+              education={education}
+              workExp={workExperience}
+            />
           </div>
         </div>
       </main>
