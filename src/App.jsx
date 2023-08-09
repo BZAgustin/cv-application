@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ContactInfo from './components/ContactInfo';
+import Education from './components/Education';
 import Preview from './components/Preview';
 import uniqid from 'uniqid';
 import './App.css'
@@ -28,20 +29,31 @@ function App() {
     to: ''
   }]);
 
-  const firstNameChangeHandler = (e) => {
+  const handleFirstNameChange = (e) => {
     setContactInfo({ ...contactInfo, firstName: e.target.value });
   }
 
-  const lastNameChangeHandler = (e) => {
+  const handleLastNameChange = (e) => {
     setContactInfo({ ...contactInfo, lastName: e.target.value });
   }
 
-  const addressChangeHandler = (e) => {
+  const handleAddressChange = (e) => {
     setContactInfo({ ...contactInfo, address: e.target.value });
   }
   
-  const phoneChangeHandler = (e) => {
+  const handlePhoneChange = (e) => {
     setContactInfo({ ...contactInfo, phone: e.target.value });
+  }
+
+  const addEducation = (e) => {
+    e.preventDefault();
+    setEducation([...education, {
+      id: uniqid(),
+      institution: '',
+      degree: '',
+      from: '',
+      to: ''
+    }]);
   }
 
   return (
@@ -51,20 +63,28 @@ function App() {
       </header>
       <main>
         <div className="wrapper">
-
+          <div className="editor">
             <ContactInfo 
               {...contactInfo}
-              changeFirstName={firstNameChangeHandler}
-              changeLastName={lastNameChangeHandler}
-              changeAddress={addressChangeHandler}
-              changePhone={phoneChangeHandler}
+              changeFirstName={handleFirstNameChange}
+              changeLastName={handleLastNameChange}
+              changeAddress={handleAddressChange}
+              changePhone={handlePhoneChange}
             />
 
+            <Education 
+              educationList={education}
+              newEducation={addEducation}
+           />
+          </div>
+
+          <div className="preview">
             <Preview 
               contact={contactInfo}
               education={education}
               workExp={workExperience}
             />
+          </div>
         </div>
       </main>
     </>

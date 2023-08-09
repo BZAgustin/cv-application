@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 
-function Education({ educationList }) {
+function Education({ educationList, newEducation }) {
   return (
     <div className="education">
       <h1>Education Experiences</h1>
 
       {educationList.map((education) => (
+      <>
         <form action="" key={education.id}>
           <label htmlFor="institution">Institution</label>
           <input 
@@ -34,8 +35,13 @@ function Education({ educationList }) {
             id={`to-${education.id}`}
             value={education.to}
           />
+        
         </form>
+        <hr />
+      </>
       ))}
+
+      <button onClick={newEducation}>Add</button>
     </div>
   );
 }
