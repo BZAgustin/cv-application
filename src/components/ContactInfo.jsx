@@ -4,7 +4,7 @@ import '../styles/ContactInfo.css'
 function ContactInfo({ firstName, lastName, address, phone, changeFirstName,
                        changeLastName, changeAddress, changePhone }) {
   return (
-    <div className="editor">
+    <div className="contact">
       <h1>Contact Info</h1>
       <form action="">
         <label htmlFor="firstName">First Name</label>
