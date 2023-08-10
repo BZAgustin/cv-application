@@ -27,7 +27,14 @@ header {
   flex: 1;
 }
 
-.education form, .education hr {
+.education form, .education hr,
+.workExperience form, .workExperience hr {
   margin-bottom: 18px;
+}
+
+.education, .workExperience {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
