@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import '../styles/ContactInfo.css'
 
-function ContactInfo({ firstName, lastName, address, phone, changeFirstName,
-                       changeLastName, changeAddress, changePhone }) {
+function ContactInfo({ firstName, lastName, address, email, phone, changeFirstName,
+                       changeLastName, changeAddress, changeEmail, changePhone }) {
   return (
     <div className="contact">
       <h1>Contact Info</h1>
@@ -29,6 +29,14 @@ function ContactInfo({ firstName, lastName, address, phone, changeFirstName,
           id="address"
           value={address}
           onChange={changeAddress} 
+        />
+
+        <label htmlFor="address">Email</label>
+        <input 
+          type="email"
+          id="email"
+          value={email}
+          onChange={changeEmail} 
         />
 
         <label htmlFor="phone">Phone Number</label>
