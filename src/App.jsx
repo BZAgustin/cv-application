@@ -11,6 +11,7 @@ function App() {
     firstName: '',
     lastName: '',
     address: '',
+    email: '',
     phone: '',
   });
 
@@ -40,6 +41,10 @@ function App() {
 
   const handleAddressChange = (e) => {
     setContactInfo({ ...contactInfo, address: e.target.value });
+  }
+
+  const handleEmailChange = (e) => {
+    setContactInfo({ ...contactInfo, email: e.target.value });
   }
   
   const handlePhoneChange = (e) => {
@@ -113,6 +118,7 @@ function App() {
               changeFirstName={handleFirstNameChange}
               changeLastName={handleLastNameChange}
               changeAddress={handleAddressChange}
+              changeEmail={handleEmailChange}
               changePhone={handlePhoneChange}
             />
 
@@ -127,7 +133,7 @@ function App() {
               workExpList={workExperience}
               changeWork={handleWorkChange}
               newExp={addWorkExperience}
-              removeWorkExp={removeWorkExperience}
+              removeExp={removeWorkExperience}
             />
           </div>
 
