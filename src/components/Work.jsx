@@ -7,7 +7,7 @@ function Work({ workExpList, changeWork, newExp, removeExp }) {
 
       {workExpList.map((experience) => (
       <div key={experience.id}>
-        <form action="" key={experience.id}>
+        <form action="">
           <label htmlFor="company">Company/Organization</label>
           <input 
             type="text"
