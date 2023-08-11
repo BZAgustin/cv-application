@@ -1,46 +1,95 @@
 /* eslint-disable react/prop-types */
 import '../styles/Preview.css'
+import profileImage from '../assets/profile.png'
+import addressIcon from '../assets/address.png'
+import emailIcon from '../assets/email.png'
+import phoneIcon from '../assets/phone.png'
 
 function Preview({ contact, education, workExp }) {
   const { firstName, lastName, address, email, phone } = contact;
 
   const educationList = education.map((item) => 
-    <div className="edu-item" key={item.id}>
-      <h3>{`Institution: ${item.institution}`}</h3>
-      <h3>{`Degree: ${item.degree}`}</h3>
-      <h3>{`From: ${item.from}`}</h3>
-      <h3>{`To: ${item.to}`}</h3>
+    <div className="eduItem" key={item.id}>
+      <div className="bulletPoint">
+        ◯
+      </div>
+      <div className="itemLeft">
+        <h2>{item.institution}</h2>
+        <h3>{item.degree}</h3>
+      </div>
+
+      <div className="itemRight">
+        <span>{`${item.from} - ${item.to}`}</span>
+      </div>
     </div>
   );
 
   const workList = workExp.map((item) => 
-    <div className="work-item" key={item.id}>
-      <h3>{`Company: ${item.company}`}</h3>
-      <h3>{`Position: ${item.position}`}</h3>
-      <h3>{`From: ${item.from}`}</h3>
-      <h3>{`To: ${item.to}`}</h3>
+    <div className="workItem" key={item.id}>
+      <div className="bulletPoint">
+        ◯
+      </div>
+      <div className="itemLeft">
+        <h2>{item.company}</h2>
+        <h3>{item.position}</h3>
+      </div>
+
+      <div className="itemRight">
+        <span>{`${item.from} - ${item.to}`}</span>
+      </div>
     </div>
   );
 
   return (
-    <>
-      <div className="previewContact">
-        <h2>First Name: {firstName}</h2>
-        <h2>Last Name: {lastName}</h2>
-        <h2>Address: {address}</h2>
-        <h2>Email: {email}</h2>
-        <h2>Phone: {phone}</h2>
+    <div className="previewContainer">
+      <div className="cvSidebar">
+        <div className="sidebarTop">
+          <img src={profileImage} alt="pic of me" />
+        </div>
+
+        <div className="sidebarBody">
+          <div className="sidebarContact">
+            <div className="contactItem">
+              <img src={addressIcon} alt="addressIcon" />
+              <span>{address}</span>
+            </div>
+
+            <div className="contactItem">
+              <img src={emailIcon} alt="emailIcon" />
+              <span>{email}</span>
+            </div>
+
+            <div className="contactItem">
+              <img src={phoneIcon} alt="phoneIcon" />
+              <span>{phone}</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="previewEducation">
-        {educationList.map(item => item)}
-      </div>
+      <div className="cvMain">
+        <div className="cvHeader">
+          <h1>{`${firstName} ${lastName}`}</h1>
+          <h2>Front-End Web Developer</h2>
+        </div>
 
-      <div className="previewWorkExperience">
-        {workList.map(item => item)}
+        <div className="cvBody">
+          <div className="previewEducation">
+            <h1>Education</h1>
+            <hr />
+
+            {educationList.map(item => item)}            
+          </div>
+
+          <div className="previewWorkExp">
+            <h1>Work Experience</h1>
+            <hr />
+
+            {workList.map(item => item)}            
+          </div>
+        </div>
       </div>
-    </>
-    
+    </div>
   );
 }
 
