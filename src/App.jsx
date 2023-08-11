@@ -146,6 +146,10 @@ function App() {
           </div>
         </div>
       </main>
+
+      <footer>
+        <h2>By BZAGUSTIN</h2>
+      </footer>
     </>
   );
 }
