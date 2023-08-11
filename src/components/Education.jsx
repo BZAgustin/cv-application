@@ -3,7 +3,7 @@ import '../styles/Education.css'
 
 function Education({ educationList, changeEducation, newEducation, removeEducation }) {
   return (
-    <div className="education">
+    <div className="customForm">
       <h1>Education Experiences</h1>
 
       {educationList.map((education) => (
@@ -46,12 +46,13 @@ function Education({ educationList, changeEducation, newEducation, removeEducati
         </div>
 
         </form>
-        <hr />
+        
       </div>
       ))}
 
+      <hr />
       <div className="btn">
-        <button onClick={newEducation}>Add New</button>
+        <button onClick={newEducation}>Add Education</button>
       </div>
     </div>
   );

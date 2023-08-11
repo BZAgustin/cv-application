@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-
 function Work({ workExpList, changeWork, newExp, removeExp }) {
   return (
-    <div className="workExperience">
+    <div className="customForm">
       <h1>Work Experience</h1>
 
       {workExpList.map((experience) => (
@@ -45,12 +44,13 @@ function Work({ workExpList, changeWork, newExp, removeExp }) {
         </div>
 
         </form>
-        <hr />
       </div>
       ))}
+        
+      <hr />
 
       <div className="btn">
-        <button onClick={newExp}>Add New</button>
+        <button onClick={newExp}>Add Work Experience</button>
       </div>
     </div>
   );
