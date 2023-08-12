@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import '../styles/Preview.css'
-import profileImage from '../assets/profile.png'
+import profileImage from '../assets/johnDoe.jpg'
 import addressIcon from '../assets/address.png'
 import emailIcon from '../assets/email.png'
 import phoneIcon from '../assets/phone.png'
+import previewEducation from '../assets/previewEducation.png'
+import previewWork from '../assets/previewWork.png'
 
 function Preview({ contact, education, workExp }) {
-  const { firstName, lastName, address, email, phone } = contact;
+  const { firstName, lastName, occupation, address, email, phone } = contact;
 
   const educationList = education.map((item) => 
     <div className="eduItem" key={item.id}>
@@ -70,19 +72,19 @@ function Preview({ contact, education, workExp }) {
       <div className="cvMain">
         <div className="cvHeader">
           <h1>{`${firstName} ${lastName}`}</h1>
-          <h2>Front-End Web Developer</h2>
+          <h2>{occupation}</h2>
         </div>
 
         <div className="cvBody">
           <div className="previewEducation">
-            <h1>Education</h1>
+            <h1> <img src={previewEducation} alt="" id="titleIcon" /> Education</h1>
             <hr />
 
             {educationList.map(item => item)}            
           </div>
 
           <div className="previewWorkExp">
-            <h1>Work Experience</h1>
+            <h1> <img src={previewWork} alt="" id="titleIcon"/> Work Experience</h1>
             <hr />
 
             {workList.map(item => item)}            
