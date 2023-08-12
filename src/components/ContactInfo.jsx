@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import '../styles/ContactInfo.css'
+import contactIcon from '../assets/contactIcon.png'
 
 function ContactInfo({ firstName, lastName, occupation, address, email, phone, changeFirstName,
                        changeLastName, changeAddress, changeOccupation, changeEmail, changePhone }) {
   return (
     <div className="customForm">
-      <h1>Contact Info</h1>
+      <h1> <img src={contactIcon} alt="" />Contact Info</h1>
       <form action="">
         <label htmlFor="firstName">First Name</label>
         <input 

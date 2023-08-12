@@ -53,17 +53,17 @@ function Preview({ contact, education, workExp }) {
           <div className="sidebarContact">
             <div className="contactItem">
               <img src={addressIcon} alt="addressIcon" />
-              <span>{address}</span>
+              <span> <b>{address}</b></span>
             </div>
 
             <div className="contactItem">
               <img src={emailIcon} alt="emailIcon" />
-              <span>{email}</span>
+              <span><b>{email}</b></span>
             </div>
 
             <div className="contactItem">
               <img src={phoneIcon} alt="phoneIcon" />
-              <span>{phone}</span>
+              <span><b>{phone}</b></span>
             </div>
           </div>
         </div>

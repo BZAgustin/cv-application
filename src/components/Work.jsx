@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
+import workIcon from '../assets/previewWork.png'
+
 function Work({ workExpList, changeWork, newExp, removeExp }) {
   return (
     <div className="customForm">
-      <h1>Work Experience</h1>
+      <h1> <img src={workIcon} alt="" />Work Experience</h1>
 
       {workExpList.map((experience) => (
       <div key={experience.id}>

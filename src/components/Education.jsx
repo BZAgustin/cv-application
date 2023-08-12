@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import '../styles/Education.css'
+import educationIcon from '../assets/previewEducation.png'
 
 function Education({ educationList, changeEducation, newEducation, removeEducation }) {
   return (
     <div className="customForm">
-      <h1>Education Experiences</h1>
+      <h1> <img src={educationIcon} alt="" />Education Experiences</h1>
 
       {educationList.map((education) => (
       <div key={education.id}>
