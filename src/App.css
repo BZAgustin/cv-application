@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-  background-color: #152330;
+  background-color: #111920;
   display: flex;
   flex-direction: column;
 }
@@ -59,12 +59,24 @@ input:focus {
 
 .customForm {
   padding: 18px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgb(108, 109, 145);
   border-radius: 15px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
+.customForm h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.customForm img {
+  height: 36px;
+}
+
 .customForm input {
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 4px;
   font-size: 1.1rem;
   margin-bottom: 16px;
