@@ -8,27 +8,28 @@ import './App.css'
 
 function App() {
   const [contactInfo, setContactInfo] = useState({
-    firstName: '',
-    lastName: '',
-    address: '',
-    email: '',
-    phone: '',
+    firstName: 'John',
+    lastName: 'Doe',
+    occupation: 'Businessman',
+    address: 'Fake Street 1234',
+    email: 'fake@email.com',
+    phone: '1234-56789',
   });
 
   const [education, setEducation] = useState([{
     id: uniqid(),
-    institution: '',
-    degree: '',
-    from: '',
-    to: '',
+    institution: 'Some School',
+    degree: 'A Degree',
+    from: '10-11-2021',
+    to: '10-11-2022',
   }]);
 
   const [workExperience, setWorkExperience] = useState([{
     id: uniqid(),
-    company: '',
-    position: '',
-    from: '',
-    to: ''
+    company: 'A Certain Company',
+    position: 'Worker',
+    from: '10-11-2022',
+    to: '10-11-2023'
   }]);
 
   const handleFirstNameChange = (e) => {
@@ -37,6 +38,10 @@ function App() {
 
   const handleLastNameChange = (e) => {
     setContactInfo({ ...contactInfo, lastName: e.target.value });
+  }
+
+  const handleOccupationChange = (e) => {
+    setContactInfo({ ...contactInfo, occupation: e.target.value });
   }
 
   const handleAddressChange = (e) => {
@@ -117,6 +122,7 @@ function App() {
               {...contactInfo}
               changeFirstName={handleFirstNameChange}
               changeLastName={handleLastNameChange}
+              changeOccupation={handleOccupationChange}
               changeAddress={handleAddressChange}
               changeEmail={handleEmailChange}
               changePhone={handlePhoneChange}
@@ -146,10 +152,6 @@ function App() {
           </div>
         </div>
       </main>
-
-      <footer>
-        <h2>By BZAGUSTIN</h2>
-      </footer>
     </>
   );
 }

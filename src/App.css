@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto';
 }
 
 html, body {
@@ -9,25 +12,40 @@ html, body {
 }
 
 body {
+  background-color: #152330;
   display: flex;
   flex-direction: column;
 }
 
 header {
+  padding: 24px;
   text-align: center;
+  font-size: 1.5rem;
+  color: white;
 }
 
 main {
   flex-grow: 1;
 }
 
+input {
+  border: none;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 3px solid rgb(255, 153, 0);
+}
+
 .wrapper {
+  padding: 12px 86px;
   display: flex;
   flex-grow: 1;
 }
 
 .editor {
-  background-color: #b0b8c9;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -41,8 +59,15 @@ main {
 
 .customForm {
   padding: 18px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 15px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.customForm input {
+  padding: 4px;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
 }
 
 .preview {
