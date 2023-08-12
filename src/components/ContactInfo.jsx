@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import '../styles/ContactInfo.css'
 
-function ContactInfo({ firstName, lastName, address, email, phone, changeFirstName,
-                       changeLastName, changeAddress, changeEmail, changePhone }) {
+function ContactInfo({ firstName, lastName, occupation, address, email, phone, changeFirstName,
+                       changeLastName, changeAddress, changeOccupation, changeEmail, changePhone }) {
   return (
     <div className="customForm">
       <h1>Contact Info</h1>
@@ -12,7 +12,8 @@ function ContactInfo({ firstName, lastName, address, email, phone, changeFirstNa
           type="text"
           id="firstName"
           value={firstName}
-          onChange={changeFirstName} 
+          onChange={changeFirstName}
+          placeholder='First Name' 
         />
 
         <label htmlFor="lastName">Last Name</label>
@@ -21,6 +22,16 @@ function ContactInfo({ firstName, lastName, address, email, phone, changeFirstNa
           id="lastName"
           value={lastName}
           onChange={changeLastName} 
+          placeholder='Last Name' 
+        />
+
+        <label htmlFor="occupation">Occupation</label>
+        <input 
+          type="text"
+          id="occupation"
+          value={occupation}
+          onChange={changeOccupation} 
+          placeholder='Occupation' 
         />
 
         <label htmlFor="address">Address</label>
@@ -29,6 +40,7 @@ function ContactInfo({ firstName, lastName, address, email, phone, changeFirstNa
           id="address"
           value={address}
           onChange={changeAddress} 
+          placeholder='Address' 
         />
 
         <label htmlFor="address">Email</label>
@@ -37,6 +49,7 @@ function ContactInfo({ firstName, lastName, address, email, phone, changeFirstNa
           id="email"
           value={email}
           onChange={changeEmail} 
+          placeholder='Email Address' 
         />
 
         <label htmlFor="phone">Phone Number</label>
@@ -44,7 +57,8 @@ function ContactInfo({ firstName, lastName, address, email, phone, changeFirstNa
           type="tel"
           id="phone"
           value={phone}
-          onChange={changePhone} 
+          onChange={changePhone}
+          placeholder='Phone Number' 
         />
       </form>
     </div>
